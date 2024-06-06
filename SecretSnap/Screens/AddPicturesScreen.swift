@@ -61,7 +61,6 @@ class AddPicturesScreen: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemGray6
         configuratUI()
-        print(view.frame.height)
     }
     // MARK: - configuratUI, adding propertys
     private func configuratUI() {
@@ -138,6 +137,11 @@ class AddPicturesScreen: UIViewController {
     }
     private func saveButtonPushed() {
         print("SAVE")
+        let savedDate = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM d, yyyy, HH:mm"
+        let savedPictureDate = formatter.string(from: savedDate)
+        print(savedPictureDate)
     }
     private func addButtonPushed() {
         print("ADD")
@@ -188,6 +192,11 @@ class AddPicturesScreen: UIViewController {
         }
         alert.addAction(leaveAction)
         let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+            let savedDate = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MMMM d, yyyy, HH:mm"
+            let savedPictureDate = formatter.string(from: savedDate)
+            print(savedPictureDate)
         let controller = ViewingScreen()
         self.navigationController?.pushViewController(controller, animated: true)
         }

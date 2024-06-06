@@ -138,10 +138,7 @@ class ViewingScreen: UIViewController {
     }
     // MARK: - Action functions
     private func backButtonPushed() {
-        let controller = LaunchScreen()
-        navigationController?.pushViewController(controller, animated: true)
-       // navigationController?.popToViewController(controller, animated: true)
-      //  navigationController?.popViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     private func favoriteButtonPushed() {
         print("LIKE")
